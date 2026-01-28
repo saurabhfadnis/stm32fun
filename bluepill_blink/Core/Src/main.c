@@ -88,7 +88,7 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
-  uint32_t now = 0, last_blink = 0;
+  uint32_t now = 0, next_blink = 0;
 
   /* USER CODE END 2 */
 
@@ -97,10 +97,10 @@ int main(void)
   while (1)
   {
 	  now = HAL_GetTick();
-	  if (now - last_blink >= 1000)
+	  if (now >= next_blink )
 	  {
 		  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-		  last_blink = now;
+		  next_blink = now + 200;
 	  }
     /* USER CODE END WHILE */
 
