@@ -40,10 +40,11 @@
 # debug information files
 *.dwo
 
+# My
+*.*~
+
 # CubeIDE workspace metadata
 *.metadata*
-
-#STM32 Workspace
 *.metadata/
 *.settings/
 *Debug/
