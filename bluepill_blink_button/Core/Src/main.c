@@ -96,13 +96,12 @@ int main(void)
   {
       if(HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin) == GPIO_PIN_RESET)
       {
-          //HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-          HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-          HAL_Delay(100);
-      }
-      else
-      {
-          HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+          HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+//          HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+          HAL_Delay(25);
+          while(HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin) == GPIO_PIN_RESET);
+          HAL_Delay(25);
+
       }
 
     /* USER CODE END WHILE */
