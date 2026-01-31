@@ -42,3 +42,11 @@
 
 # CubeIDE workspace metadata
 *.metadata*
+
+#STM32 Workspace
+*.metadata/
+*.settings/
+*Debug/
+*Build
+*.ld
+*.launch
